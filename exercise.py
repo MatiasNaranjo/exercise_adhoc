@@ -9,32 +9,32 @@ lista_personas = [
 
 
 def ordenar(lista_personas):
-    """ El metodo debe devolver una lista con las edades ordenadas de menor a mayor"""
+    """El metodo debe devolver una lista con las edades ordenadas de menor a mayor"""
     # Completar
     pass
 
 
 def convertir_a_diccionario(lista_personas):
-    """ Hacer un diccionario que tenga como claves los “dni” y como valores tuplas con nombre, apellido y edad """
+    """Hacer un diccionario que tenga como claves los “dni” y como valores tuplas con nombre, apellido y edad"""
     # Completar
     pass
 
 
 def devolver_edad(lista_personas, dni):
-    """ Para la 'lista_personas' devuelve la edad de la persona que tenga el dni definido.
+    """Para la 'lista_personas' devuelve la edad de la persona que tenga el dni definido.
     Tip: intentar usar el método convertir_a_diccionario"""
     # Completar
     pass
 
 
 def eliminar_repetidos(lista_personas):
-    """ El metodo debe devolver los elementos unicos """
+    """El metodo debe devolver los elementos unicos"""
     # Completar
     pass
 
 
 def separar_por_edad(lista_personas):
-    """ Devolver dos listas
+    """Devolver dos listas
     * lista 1: mayores de 25 (incluido)
     * lista 2: menores de 25
     """
@@ -43,14 +43,14 @@ def separar_por_edad(lista_personas):
 
 
 def obtener_promedio(lista):
-    """ Implementar obtener el promedio de la lista de números que se recibe.
+    """Implementar obtener el promedio de la lista de números que se recibe.
     Capturar con un try/except la excepción de dividir por cero"""
     # Completar
     pass
 
 
 def main():
-    """ Este metodo no debe modificarse y es solo a fines de probar el codigo """
+    """Este metodo no debe modificarse y es solo a fines de probar el codigo"""
     print('Resultados:\n')
     print(' * Edades ordenadas: %s\n' % ordenar(lista_personas))
     print(' * Elementos como diccionario: %s\n' % convertir_a_diccionario(lista_personas))
