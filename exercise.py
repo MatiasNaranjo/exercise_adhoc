@@ -36,8 +36,8 @@ def devolver_edad(lista_personas, dni):
 
 def eliminar_repetidos(lista_personas):
     """El metodo debe devolver los elementos unicos"""
-    # Completar
-    pass
+    # Convierte la lista a un conjunto para eliminar duplicados
+    return list(set(lista_personas))
 
 
 def separar_por_edad(lista_personas):
