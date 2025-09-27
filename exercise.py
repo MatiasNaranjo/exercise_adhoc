@@ -63,8 +63,14 @@ def separar_por_edad(lista_personas):
 def obtener_promedio(lista):
     """Implementar obtener el promedio de la lista de números que se recibe.
     Capturar con un try/except la excepción de dividir por cero"""
-    # Completar
-    pass
+    try:
+        # Intenta hacer la división para calcular el promedio
+        lista_prom = sum(lista) / len(lista)
+        return lista_prom
+
+    except ZeroDivisionError:
+        # Si ocurre una división por cero, se ejecuta la excepción de división por cero
+        return 0
 
 
 def main():
