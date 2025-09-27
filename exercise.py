@@ -45,8 +45,19 @@ def separar_por_edad(lista_personas):
     * lista 1: mayores de 25 (incluido)
     * lista 2: menores de 25
     """
-    # Completar
-    return [], []
+    # Se inician dos listas vacías
+    lista_mayores = []
+    lista_menores = []
+
+    for persona in lista_personas:
+        # Accede al cuarto elemento de la tupla (índice 3), que representa la edad
+        if persona[3] >= 25:
+            # Si la edad es mayor o igual a 25, se agrega la persona a la lista de mayores
+            lista_mayores.append(persona)
+        else:
+            # Si la edad es menor a 25, se agrega la persona a la lista de menores
+            lista_menores.append(persona)
+    return lista_mayores, lista_menores
 
 
 def obtener_promedio(lista):
