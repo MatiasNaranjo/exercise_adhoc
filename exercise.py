@@ -25,8 +25,13 @@ def convertir_a_diccionario(lista_personas):
 def devolver_edad(lista_personas, dni):
     """Para la 'lista_personas' devuelve la edad de la persona que tenga el dni definido.
     Tip: intentar usar el método convertir_a_diccionario"""
-    # Completar
-    pass
+    # Utiliza el método convertir_a_diccionario para obtener un diccionario de personas
+    lista_personas_dict = convertir_a_diccionario(lista_personas)
+
+    # Verifica si el dni existe en el diccionario y se devuelve la edad (índice 2 del valor tupla)
+    if dni in lista_personas_dict:
+        # Devuelve la edad de la persona con el dni especificado
+        return lista_personas_dict[dni][2]
 
 
 def eliminar_repetidos(lista_personas):
