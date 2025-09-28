@@ -84,3 +84,7 @@ def main():
     print(' * Los menores de 25 son: %s\n' % separar_por_edad(lista_personas)[1])
     print(' * El promedio de las edades es: %s\n' % obtener_promedio(ordenar(lista_personas)))
     print(' * El promedio de una lista vacía es: %s\n' % obtener_promedio([]))
+
+
+if __name__ == "__main__":
+    main()
