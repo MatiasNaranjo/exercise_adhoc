@@ -30,9 +30,26 @@ def ordenar(lista_personas):
 
 def convertir_a_diccionario(lista_personas):
     """Hacer un diccionario que tenga como claves los “dni” y como valores tuplas con nombre, apellido y edad"""
+
+    # Creo un diccionario vacío
+    personas_dict = {}
+
+    for persona in lista_personas:
+        # Se toma el primer elemento de la tupla (dni) como clave
+        dni = persona[0]
+
+        # El resto de los elementos (nombre, apellido, edad) como valor en forma de tupla.
+        nombre = persona[1]
+        apellido = persona[2]
+        edad = persona[3]
+
+        # Se almacena una tupla con (nombre, apellido, edad) en el diccionario
+        personas_dict[dni] = (nombre, apellido, edad)
+
+    return personas_dict
     # Se toma el primer elemento de cada tupla (dni) como clave
     # el resto de los elementos (nombre, apellido, edad) como valor en forma de tupla.
-    return {persona[0]: persona[1:] for persona in lista_personas}
+    # return {persona[0]: persona[1:] for persona in lista_personas}
 
 
 def devolver_edad(lista_personas, dni):
