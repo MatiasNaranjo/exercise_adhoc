@@ -66,8 +66,27 @@ def devolver_edad(lista_personas, dni):
 
 def eliminar_repetidos(lista_personas):
     """El metodo debe devolver los elementos unicos"""
+
+    # Creamos un conjunto vacío para llevar registro de las personas ya vistas
+    set_vistos = set()
+
+    # Lista donde vamos a guardar solo personas únicas (sin duplicados)
+    lista_unicos = []
+
+    # Recorremos la lista original
+    for persona in lista_personas:
+        # Si esta persona aún no fue agregada (no está en el conjunto)
+        if persona not in set_vistos:
+            # La agregamos a la lista de únicos
+            lista_unicos.append(persona)
+            # Y marcamos que ya fue vista agregándola al conjunto
+            set_vistos.add(persona)
+
+    # Devolvemos la lista sin duplicados y en el mismo orden original
+    return lista_unicos
+
     # Convierte la lista a un conjunto para eliminar duplicados
-    return list(set(lista_personas))
+    # return list(set(lista_personas))
 
 
 def separar_por_edad(lista_personas):
