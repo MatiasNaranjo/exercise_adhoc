@@ -10,9 +10,22 @@ lista_personas = [
 
 def ordenar(lista_personas):
     """El metodo debe devolver una lista con las edades ordenadas de menor a mayor"""
+
+    # Creo la lista de edades
+    lista_edad = [persona[3] for persona in lista_personas]
+    # Cantidad de elementos en la lista
+    n = len(lista_edad)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            # Comparo elementos cpsecutivos
+            if lista_edad[j] > lista_edad[j + 1]:
+                # Si el primero es mayor, los intercambio
+                lista_edad[j], lista_edad[j + 1] = lista_edad[j + 1], lista_edad[j]
+    return lista_edad
+
     # Se crea una lista que contiene el elemento de la edad (índice 3) de cada tupla en lista_personas
     # Luego, se utiliza la función sorted() para ordenar la lista de edades de menor a mayor y se devuelve el resultado.
-    return sorted([persona[3] for persona in lista_personas])
+    # return sorted([persona[3] for persona in lista_personas])
 
 
 def convertir_a_diccionario(lista_personas):
