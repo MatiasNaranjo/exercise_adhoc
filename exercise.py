@@ -10,16 +10,46 @@ lista_personas = [
 
 def ordenar(lista_personas):
     """El metodo debe devolver una lista con las edades ordenadas de menor a mayor"""
+
+    # Creo la lista de edades
+    lista_edad = [persona[3] for persona in lista_personas]
+    # Cantidad de elementos en la lista
+    n = len(lista_edad)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            # Comparo elementos cpsecutivos
+            if lista_edad[j] > lista_edad[j + 1]:
+                # Si el primero es mayor, los intercambio
+                lista_edad[j], lista_edad[j + 1] = lista_edad[j + 1], lista_edad[j]
+    return lista_edad
+
     # Se crea una lista que contiene el elemento de la edad (índice 3) de cada tupla en lista_personas
     # Luego, se utiliza la función sorted() para ordenar la lista de edades de menor a mayor y se devuelve el resultado.
-    return sorted([persona[3] for persona in lista_personas])
+    # return sorted([persona[3] for persona in lista_personas])
 
 
 def convertir_a_diccionario(lista_personas):
     """Hacer un diccionario que tenga como claves los “dni” y como valores tuplas con nombre, apellido y edad"""
+
+    # Creo un diccionario vacío
+    personas_dict = {}
+
+    for persona in lista_personas:
+        # Se toma el primer elemento de la tupla (dni) como clave
+        dni = persona[0]
+
+        # El resto de los elementos (nombre, apellido, edad) como valor en forma de tupla.
+        nombre = persona[1]
+        apellido = persona[2]
+        edad = persona[3]
+
+        # Se almacena una tupla con (nombre, apellido, edad) en el diccionario
+        personas_dict[dni] = (nombre, apellido, edad)
+
+    return personas_dict
     # Se toma el primer elemento de cada tupla (dni) como clave
     # el resto de los elementos (nombre, apellido, edad) como valor en forma de tupla.
-    return {persona[0]: persona[1:] for persona in lista_personas}
+    # return {persona[0]: persona[1:] for persona in lista_personas}
 
 
 def devolver_edad(lista_personas, dni):
@@ -36,8 +66,27 @@ def devolver_edad(lista_personas, dni):
 
 def eliminar_repetidos(lista_personas):
     """El metodo debe devolver los elementos unicos"""
+
+    # Creamos un conjunto vacío para llevar registro de las personas ya vistas
+    set_vistos = set()
+
+    # Lista donde vamos a guardar solo personas únicas (sin duplicados)
+    lista_unicos = []
+
+    # Recorremos la lista original
+    for persona in lista_personas:
+        # Si esta persona aún no fue agregada (no está en el conjunto)
+        if persona not in set_vistos:
+            # La agregamos a la lista de únicos
+            lista_unicos.append(persona)
+            # Y marcamos que ya fue vista agregándola al conjunto
+            set_vistos.add(persona)
+
+    # Devolvemos la lista sin duplicados y en el mismo orden original
+    return lista_unicos
+
     # Convierte la lista a un conjunto para eliminar duplicados
-    return list(set(lista_personas))
+    # return list(set(lista_personas))
 
 
 def separar_por_edad(lista_personas):
